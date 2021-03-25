@@ -1,13 +1,17 @@
+import time
+
+
+
 def simple_search(list, item):
     for i in range(0 , len(list)):
         if list[i] == item:
             return i
     return None
     
+tic = time.perf_counter()
+my_list = list(range(160_000_000))
+item = 159_999_999
+print (simple_search(my_list, item)) # => 1
+toc = time.perf_counter()
 
-
-
-
-
-my_list = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]
-print (simple_search(my_list, -0)) # => 1
+print(f"runtime: {toc - tic:0.3f} seconds")

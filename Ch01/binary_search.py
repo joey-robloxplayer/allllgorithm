@@ -1,3 +1,8 @@
+import time
+
+
+
+
 def binary_search(list, item):
     low = 0
     high = len(list)
@@ -12,6 +17,10 @@ def binary_search(list, item):
             low = mid + 1
     return None
 
-my_list = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]
+tic = time.perf_counter()
+my_list = list(range(100000))
+item = 99999
+print (binary_search(my_list, item)) # => 1
+toc = time.perf_counter()
 
-print (binary_search(my_list, 1)) # => 1
+print(f"runtime: {toc - tic:0.7f} seconds")
